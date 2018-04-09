@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Awale.vue.GamePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Awale.vue"
+             xmlns:local1="clr-namespace:Awale.vue.components"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0.0" Color="Orange" />
+                    <GradientStop Offset="0.8" Color="Brown" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Column="1" Grid.Row="1">
+              
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <local1:CircleBorder x:Name="c0" Content="{Binding GameBoard.Board[0], Mode=TwoWay}" Grid.Column="0" Grid.Row="1" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c1" Content="{Binding GameBoard.Board[1], Mode=TwoWay}" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c2" Content="{Binding GameBoard.Board[2], Mode=TwoWay}" Grid.Column="2" Grid.Row="1" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c3" Content="{Binding GameBoard.Board[3], Mode=TwoWay}" Grid.Column="3" Grid.Row="1" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c4" Content="{Binding GameBoard.Board[4], Mode=TwoWay}" Grid.Column="4" Grid.Row="1" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c5" Content="{Binding GameBoard.Board[5], Mode=TwoWay}" Grid.Column="5" Grid.Row="1" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c11" Content="{Binding GameBoard.Board[11], Mode=TwoWay}" Grid.Column="0" Grid.Row="0" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c10" Content="{Binding GameBoard.Board[10], Mode=TwoWay}" Grid.Column="1" Grid.Row="0" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c9" Content="{Binding GameBoard.Board[9], Mode=TwoWay}" Grid.Column="2" Grid.Row="0" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c8" Content="{Binding GameBoard.Board[8], Mode=TwoWay}" Grid.Column="3" Grid.Row="0" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c7" Content="{Binding GameBoard.Board[7], Mode=TwoWay}" Grid.Column="4" Grid.Row="0" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+            <local1:CircleBorder x:Name="c6" Content="{Binding GameBoard.Board[6], Mode=TwoWay}" Grid.Column="5" Grid.Row="0" MouseLeftButtonUp="CircleBorder_MouseLeftButtonUp"/>
+        </Grid>
+
+        <!--<Label Content="Player 1 : " Grid.Column="0" Grid.Row="1"/>-->
+        <TextBlock Text="{Binding P1.Score}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding P2.Score}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="{Binding CurrentPlayer}" Grid.Column="1" Grid.Row="0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    </Grid>
+</UserControl>
